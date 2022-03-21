@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// importing all the necessary components to build the application
+import Home from "./pages/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import "./App.css";
+import { useState } from "react";
 
+// the main page which aggregates all different components here
 function App() {
+  // to toggle between products and transactions page
+  const [toggleVal, setToggleVal] = useState(false);
+  const handleToggleSwitch = (val) => {
+    setToggleVal(val);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div className="container">
+        <Sidebar toggleVal={toggleVal} toggleSwitch={handleToggleSwitch} />
+        <Home toggleVal={toggleVal} />
+      </div>
     </div>
   );
 }
