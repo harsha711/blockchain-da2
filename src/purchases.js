@@ -11,4 +11,10 @@ export default [
     total: 193.19,
     items: ["Watch", "Bottle (x2)"],
   },
+  {
+    id: 3,
+    name: "Jedi Smith",
+    total: 201.5,
+    items: ["Nike Shoes (x2)"],
+  },
 ];
